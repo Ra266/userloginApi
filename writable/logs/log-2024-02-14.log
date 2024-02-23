@@ -1,0 +1,171 @@
+CRITICAL - 2024-02-14 09:49:53 --> ErrorException: Attempt to read property "name" on null
+in APPPATH\Controllers\UserController.php on line 15.
+ 1 APPPATH\Controllers\UserController.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on null', 'C:\\WampServer\\www\\userlogin\\app\\Controllers\\UserController.php', 15)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-14 10:39:23 --> ParseError: Unmatched '}'
+in APPPATH\Controllers\UserController.php on line 42.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\WampServer\\www\\userlogin\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-14 10:49:45 --> Error connecting to the database: mysqli_sql_exception: Unknown database ' ci_db_crud' in C:\WampServer\www\userlogin\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\WampServer\www\userlogin\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', ' ci_db_crud', 3306, '', 0)
+#1 C:\WampServer\www\userlogin\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\WampServer\www\userlogin\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\WampServer\www\userlogin\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\WampServer\www\userlogin\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\WampServer\www\userlogin\system\BaseModel.php(577): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\WampServer\www\userlogin\app\Controllers\UserController.php(30): CodeIgniter\BaseModel->find()
+#7 C:\WampServer\www\userlogin\system\CodeIgniter.php(941): App\Controllers\UserController->login()
+#8 C:\WampServer\www\userlogin\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\WampServer\www\userlogin\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\WampServer\www\userlogin\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database ' ci_db_crud' in C:\WampServer\www\userlogin\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\WampServer\www\userlogin\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\WampServer\www\userlogin\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\WampServer\www\userlogin\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\WampServer\www\userlogin\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\WampServer\www\userlogin\system\BaseModel.php(577): CodeIgniter\Model->doFind(false, NULL)
+#5 C:\WampServer\www\userlogin\app\Controllers\UserController.php(30): CodeIgniter\BaseModel->find()
+#6 C:\WampServer\www\userlogin\system\CodeIgniter.php(941): App\Controllers\UserController->login()
+#7 C:\WampServer\www\userlogin\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\WampServer\www\userlogin\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\WampServer\www\userlogin\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-02-14 10:49:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database ' ci_db_crud'
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `userlogin`
+WHERE `userheaderid` = :userheaderid:', [...], false)
+ 3 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 5 APPPATH\Controllers\UserController.php(30): CodeIgniter\BaseModel->find()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-14 11:23:59 --> mysqli_sql_exception: Unknown column 'user_usernamme' in 'where clause' in C:\WampServer\www\userlogin\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\WampServer\www\userlogin\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\WampServer\www\userlogin\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\WampServer\www\userlogin\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\WampServer\www\userlogin\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\WampServer\www\userlogin\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\WampServer\www\userlogin\system\BaseModel.php(577): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\WampServer\www\userlogin\app\Controllers\UserController.php(34): CodeIgniter\BaseModel->find()
+#7 C:\WampServer\www\userlogin\system\CodeIgniter.php(941): App\Controllers\UserController->login()
+#8 C:\WampServer\www\userlogin\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\WampServer\www\userlogin\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\WampServer\www\userlogin\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-02-14 11:23:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_usernamme' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `userlogin`
+WHERE `user_usernamme` = :user_usernamme:', [...], false)
+ 2 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 4 APPPATH\Controllers\UserController.php(34): CodeIgniter\BaseModel->find()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->login()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-14 11:23:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_usernamme' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `userlogin`
+WHERE `user_usernamme` = \'rahul\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `userlogin`
+WHERE `user_usernamme` = \'rahul\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `userlogin`
+WHERE `user_usernamme` = :user_usernamme:', [...], false)
+ 4 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 6 APPPATH\Controllers\UserController.php(34): CodeIgniter\BaseModel->find()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-14 11:23:59 --> [Caused by] mysqli_sql_exception: Unknown column 'user_usernamme' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `userlogin`
+WHERE `user_usernamme` = \'rahul\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `userlogin`
+WHERE `user_usernamme` = \'rahul\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `userlogin`
+WHERE `user_usernamme` = \'rahul\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `userlogin`
+WHERE `user_usernamme` = :user_usernamme:', [...], false)
+ 5 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\UserController.php(34): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-14 11:44:37 --> ParseError: Unmatched '}'
+in APPPATH\Controllers\UserController.php on line 99.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\WampServer\\www\\userlogin\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-14 11:55:51 --> ParseError: syntax error, unexpected token "}", expecting ";" or "{"
+in APPPATH\Controllers\UserController.php on line 99.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\WampServer\\www\\userlogin\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-14 12:04:26 --> ArgumentCountError: Too few arguments to function App\Controllers\UserController::setdatauser(), 0 passed in C:\WampServer\www\userlogin\system\CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH\Controllers\UserController.php on line 99.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->setdatauser()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-14 12:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-14 12:17:28 --> TypeError: Illegal offset type
+in SYSTEMPATH\Session\Session.php on line 468.
+ 1 APPPATH\Controllers\UserController.php(47): CodeIgniter\Session\Session->set([...], [...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-14 12:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-14 12:19:31 --> TypeError: Illegal offset type
+in SYSTEMPATH\Session\Session.php on line 468.
+ 1 APPPATH\Controllers\UserController.php(47): CodeIgniter\Session\Session->set([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-14 12:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-14 12:19:53 --> TypeError: Illegal offset type
+in SYSTEMPATH\Session\Session.php on line 468.
+ 1 APPPATH\Controllers\UserController.php(47): CodeIgniter\Session\Session->set([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
